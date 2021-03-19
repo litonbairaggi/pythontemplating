@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<h3>This is a webpage</h3> 
+    <div>
+        <p>Namre : {{ name|lower }}</p>
+        <p>City : {{ city }}</p>
+        <p>
+            {% for num in list %}
+
+            {% if num <= 3 %}
+            <h{{ num }}>My name is Liton </h{{ num }}>
+
+            {% else %}
+            <h{{ num }}>I'm from Khulna</h{{ num }}>
+
+            {% endif %}
+            {%endfor%}
+        </p>
+    </div>
+
+{% endblock %}
+

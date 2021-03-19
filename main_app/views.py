@@ -26,4 +26,7 @@ class ContactView(TemplateView):
         context['email'] = "liton@gmail.com"
         context['phone'] = "01610202717"
         
-        return context      
+        return context    
+
+class BlogView(TemplateView):
+    template_name = "blog.html"             
