@@ -40,7 +40,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <button class="close-toggler" type="button" data-toggle="offcanvas"> <span><i class="fas fa-times-circle" aria-hidden="true"></i></span> </button>
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"> <a class="nav-link" href="{% url '/' %}">Home <span class="sr-only">(current)</span></a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a> </li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a> <i class="fas fa-caret-down"></i>
                     <ul class="submenu">
@@ -91,13 +91,13 @@
       <div class="col-lg-2 col-md-3">
         <h3>Quick links</h3>
         <ul class="footer-links">
-          <li> <a href="index.html">Home</a></li>
-          <li> <a href="about.html">About</a></li>
-          <li> <a href="services.html">Services</a></li>
-          <li> <a href="gallery.html">Gallery</a></li>
-          <li> <a href="testimonials.html">Testimonials</a></li>
-          <li> <a href="blog.html">Blog</a></li>
-          <li> <a href="contact.html">Contact Us</a></li>
+          <li> <a href="{% url 'home' %}">Home</a></li>
+          <li> <a href="{% url 'about' %}">About</a></li>
+          <li> <a href="{% url 'services' %}">Services</a></li>
+          <li> <a href="{% url 'gallery_01' %}">Gallery</a></li>
+          <li> <a href="{% url 'blog' %}">Blog</a></li>
+          <li> <a href="{% url 'testimonials' %}">Testimonials</a></li>
+          <li> <a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-4">
