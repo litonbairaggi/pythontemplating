@@ -18,62 +18,17 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="row">
+
+        {% for blog in blogs %}
           <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog01.png' %}"></div>
+            <div class="blogImg"><img alt="" src="{{ blog.blog_img.url }}"></div>
             <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
+              <h3><a href="blog_details.html">{{ blog.description }}</a></h3>
+              <div class="blog_date">Mar 28, 2021</div>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog02.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog02.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog01.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog01.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog02.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog01.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="blogImg"><img alt="" src="{% static 'images/blog02.png' %}"></div>
-            <div class="blog_sec">
-              <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-              <div class="blog_date">May 05, 2020</div>
-            </div>
-          </div>
+        {% endfor %}
+
         </div>
         <div class="blog-pagination text-center"> <a href="#0"><i class="fas fa-angle-left"></i></a> <a href="#0">01</a> <a href="#0" class="active">02</a> <a href="#0">03</a> <a href="#0"><i class="fas fa-angle-right"></i></a> </div>
       </div>

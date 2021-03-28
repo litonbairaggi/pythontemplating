@@ -15,30 +15,14 @@
   <div class="container">
     <div class="service-wrap">
       <div class="row service_box">
+      
+      {% for service in services %}
         <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg01.png' %}"></div>
-          <h3><a href="services_details.html">HairCut <span>Styles</span></a></h3>
+          <div class="serviceImg"><img alt="" src="{{ service.services_img.url }}"></div>
+          <h3><a href="services_details.html">{{ service.name}}<span>{{ service.description }}</span></a></h3>
         </div>
-        <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg02.png' %}"></div>
-          <h3><a href="services_details.html">Perfect <span>Hairstyles</span></a></h3>
-        </div>
-        <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg03.jpg' %}"></div>
-          <h3><a href="services_details.html">Change <span>Coloring</span></a></h3>
-        </div>
-        <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg03.jpg' %}"></div>
-          <h3><a href="services_details.html">Change <span>Coloring</span></a></h3>
-        </div>
-        <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg01.png' %}"></div>
-          <h3><a href="services_details.html">HairCut <span>Styles</span></a></h3>
-        </div>
-        <div class="col-lg-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg02.png' %}"></div>
-          <h3><a href="services_details.html">Perfect <span>Hairstyles</span></a></h3>
-        </div>
+      {% endfor %}
+      
       </div>
     </div>
   </div>

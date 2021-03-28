@@ -26,6 +26,7 @@
 </div>
 <!-- Revolution slider end --> 
 
+
 <!-- About Start -->
 <div class="about-wrap" id="about">
   <div class="container">
@@ -57,18 +58,12 @@
     </div>
     <div class="service_box">
       <div class="row">
+      {% for service in services %}
         <div class="col-lg-4 col-md-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg01.png' %}"></div>
-          <h3><a href="services_details.html">HairCut <span>Styles</span></a></h3>
+          <div class="serviceImg"><img alt="" src="{{ service.services_img.url }}"></div>
+          <h3><a href="services_details.html">{{ service.name }} <span>{{ service.description }}</span></a></h3>
         </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg02.png' %}"></div>
-          <h3><a href="services_details.html">Perfect <span>Hairstyles</span></a></h3>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="serviceImg"><img alt="" src="{% static 'images/serviceimg03.jpg' %}"></div>
-          <h3><a href="services_details.html">Change <span>Coloring</span></a></h3>
-        </div>
+      {% endfor %}
       </div>
     </div>
   </div>
@@ -82,62 +77,18 @@
       <h1>Our Gallery</h1>
     </div>
     <div class="row">
+
+    {% for gallery in gallerys %}
+
       <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery01.jpg' %}" alt="">
+        <div class="galleryImg"><img src="{{ gallery.gallery_img.url}}" alt="">
           <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery01.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+            <div class="content"> <a href="{{ gallery.gallery_img.url}}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery02.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery02.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery03.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery03.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery04.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery04.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery05.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery05.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery06.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery06.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery07.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery07.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="galleryImg"><img src="{% static 'images/gallery08.jpg' %}" alt="">
-          <div class="portfolio-overley">
-            <div class="content"> <a href="{% static 'images/gallery08.jpg' %}" class="fancybox image-link" data-fancybox="images" title="Image Caption Here"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-          </div>
-        </div>
-      </div>
+
+    {% endfor %}
     </div>
   </div>
 </div>
@@ -150,9 +101,12 @@
       <h1>Our Experts</h1>
     </div>
     <div class="row">
+
+    {% for team in teams %}
+
       <div class="col-lg-3 col-md-6">
         <div class="experts">
-          <div class="teamImg"><img src="{% static 'images/team01.jpg' %}" alt="">
+          <div class="teamImg"><img src="{{ team.team_img.url }}" alt="">
             <ul class="social-icons list-inline">
               <!-- social-icons -->
               <li class="social-facebook"> <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
@@ -162,66 +116,15 @@
             </ul>
           </div>
           <div class="team_content">
-            <h5><a href="#">Jill Cortez</a></h5>
-            <p class="category">Hair Expert</p>
+            <h5><a href="#">{{ team.name }}</a></h5>
+            <p class="category">{{ team.designation }}</p>
             <!-- category --> 
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="experts">
-          <div class="teamImg"><img src="{% static 'images/team02.jpg' %}" alt="">
-            <ul class="social-icons list-inline">
-              <!-- social-icons -->
-              <li class="social-facebook"> <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
-              <li class="social-twitter"> <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-              <li class="social-linkedin"> <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a> </li>
-              <li class="social-googleplus"> <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a> </li>
-            </ul>
-          </div>
-          <div class="team_content">
-            <h5><a href="#">Calvin Roy</a></h5>
-            <p class="category">Style Expert</p>
-            <!-- category --> 
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="experts">
-          <div class="teamImg"><img src="{% static 'images/team03.jpg' %}" alt="">
-            <ul class="social-icons list-inline">
-              <!-- social-icons -->
-              <li class="social-facebook"> <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
-              <li class="social-twitter"> <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-              <li class="social-linkedin"> <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a> </li>
-              <li class="social-googleplus"> <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a> </li>
-            </ul>
-          </div>
-          <div class="team_content">
-            <h5><a href="#">Christie Pratt</a></h5>
-            <p class="category">Nail Expert</p>
-            <!-- category --> 
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="experts">
-          <div class="teamImg"><img src="{% static 'images/team04.jpg' %}" alt="">
-            <ul class="social-icons list-inline">
-              <!-- social-icons -->
-              <li class="social-facebook"> <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
-              <li class="social-twitter"> <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-              <li class="social-linkedin"> <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a> </li>
-              <li class="social-googleplus"> <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a> </li>
-            </ul>
-          </div>
-          <div class="team_content">
-            <h5><a href="#">Ben Jonson</a></h5>
-            <p class="category">Hair Expert</p>
-            <!-- category --> 
-          </div>
-        </div>
-      </div>
+
+      {% endfor %}
+
     </div>
   </div>
 </div>
@@ -249,20 +152,16 @@
       <h1>Our Blog</h1>
     </div>
     <div class="row">
-      <div class="col-lg-6">
-        <div class="blogImg"><img alt="" src="{% static 'images/blog01.png' %}"></div>
-        <div class="blog_sec">
-          <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-          <div class="blog_date">May 05, 2020</div>
+      {% for blog in blogs %}
+
+        <div class="col-lg-6">
+          <div class="blogImg"><img alt="" src="{{ blog.blog_img.url }}"></div>
+          <div class="blog_sec">
+            <h3><a href="blog_details.html">{{ blog.description }}</a></h3>
+            <div class="blog_date">March 27, 2021</div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="blogImg"><img alt="" src="{% static 'images/blog02.png' %}"></div>
-        <div class="blog_sec">
-          <h3><a href="blog_details.html">Praesent consequat justo ut sollicitudin molestie.</a></h3>
-          <div class="blog_date">May 05, 2020</div>
-        </div>
-      </div>
+      {% endfor %}  
     </div>
   </div>
 </div>
@@ -276,46 +175,19 @@
       <h1> What Our Clients Say </h1>
     </div>
     <ul class="owl-carousel testimonials_list unorderList">
+
+    {% for testimoinial in testimoinials %}
       <li class="item">
         <div class="testimonials_sec">
           <div class="quote_icon"><i class="fas fa-quote-left"></i></div>
           <div class="client_box">
-            <div class="clientImg"><img alt="" src="{% static 'images/client1.jpg' %}"></div>
-            <h3>Wanda Bates</h3>
+            <div class="clientImg"><img alt="" src="{{ testimoinial.testimoinial_img.url }}"></div>
+            <h3>{{ testimoinial.name }}</h3>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, urna eu scelerisque maximus, urna nibh semper lectus, ut interdum nunc ligula et magna. In ac mauris vehicula, vulputate sem at, placerat nisl. Etiam laoreet erat magna, at hendrerit lorem vulputate non. Nam facilisis congue convallis.</p>
+          <p>{{ testimoinial.description }}</p>
         </div>
       </li>
-      <li class="item">
-        <div class="testimonials_sec">
-          <div class="quote_icon"><i class="fas fa-quote-left"></i></div>
-          <div class="client_box">
-            <div class="clientImg"><img alt="" src="{% static 'images/client2.jpg' %}"></div>
-            <h3>Wanda Bates</h3>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, urna eu scelerisque maximus, urna nibh semper lectus, ut interdum nunc ligula et magna. In ac mauris vehicula, vulputate sem at, placerat nisl. Etiam laoreet erat magna, at hendrerit lorem vulputate non. Nam facilisis congue convallis.</p>
-        </div>
-      </li>
-      <li class="item">
-        <div class="testimonials_sec">
-          <div class="quote_icon"><i class="fas fa-quote-left"></i></div>
-          <div class="client_box">
-            <div class="clientImg"><img alt="" src="{% static 'images/client1.jpg' %}"></div>
-            <h3>Wanda Bates</h3>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, urna eu scelerisque maximus, urna nibh semper lectus, ut interdum nunc ligula et magna. In ac mauris vehicula, vulputate sem at, placerat nisl. Etiam laoreet erat magna, at hendrerit lorem vulputate non. Nam facilisis congue convallis.</p>
-        </div>
-      </li>
-      <li class="item">
-        <div class="testimonials_sec">
-          <div class="quote_icon"><i class="fas fa-quote-left"></i></div>
-          <div class="client_box">
-            <div class="clientImg"><img alt="" src="{% static 'images/client2.jpg' %}"></div>
-            <h3>Wanda Bates</h3>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, urna eu scelerisque maximus, urna nibh semper lectus, ut interdum nunc ligula et magna. In ac mauris vehicula, vulputate sem at, placerat nisl. Etiam laoreet erat magna, at hendrerit lorem vulputate non. Nam facilisis congue convallis.</p>
-        </div>
-      </li>
+    {% endfor %}
     </ul>
   </div>
 </div>
