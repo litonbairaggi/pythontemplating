@@ -63,26 +63,29 @@
           <div class="title">
             <h1>Contact <span>Information</span></h1>
           </div>
+
+          {% for setting in settings %}
           <ul class="contact-list unorderList">
             <li>
               <div class="contact_box">
                 <div class="icon"> <img alt="" src="{% static 'images/adress.png' %}"> </div>
-                <p>Main Office <span>123 Lorem Ipsum, 32 sit Atlanta</span></p>
+                <p>Main Office <span>{{ setting.company_address }}</span></p>
               </div>
             </li>
             <li>
               <div class="contact_box">
-                <div class="icon"> <img alt="" src="{% static 'images/email.png"' %}> </div>
-                <p>E-mail<span> <a href="mailto:info@example.com">info@example.com</a></span></p>
+                <div class="icon"> <img alt="" src="{% static 'images/email.png' %}"> </div>
+                <p>E-mail<span> <a href="mailto:info@example.com">{{ setting.email }}</a></span></p>
               </div>
             </li>
             <li>
               <div class="contact_box">
-                <div class="icon"> <img alt="" src="{% static 'images/phone.png"' %}> </div>
-                <p>Phone<span> <a href="tel:7701234567">(770) 123 4567</a></span></p>
+                <div class="icon"> <img alt="" src="{% static 'images/phone.png' %}"> </div>
+                <p>Phone<span> <a href="tel:7701234567">{{ setting.phome }}</a></span></p>
               </div>
             </li>
           </ul>
+          {% endfor %}
         </div>
       </div>
     </div>

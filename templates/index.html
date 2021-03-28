@@ -7,20 +7,17 @@
 <div class="tp-banner-container">
   <div class="tp-banner">
     <ul>
-      <li data-slotamount="7" data-transition="3dcurtain-horizontal" data-masterspeed="1000" data-saveperformance="on"> <img alt="" src="{% static 'images/dummy.png' %}" data-lazyload="{% static 'images/slider.jpg' %}">
+
+    {% for slider in sliders %}
+      <li data-slotamount="7" data-transition="3dcurtain-horizontal" data-masterspeed="1000" data-saveperformance="on"> <img alt="" src="{{ slider.sliders_img.url }}" data-lazyload="{{ slider.sliders_img.url }}">
         <div class="caption lfb large-title tp-resizeme slidertext1" data-x="left" data-y="240" data-speed="600" data-start="1600"> Welcome To </div>
-        <div class="caption lft large-title tp-resizeme slidertext2" data-x="left" data-y="270" data-speed="600" data-start="2200"><span> Beauty Salon </span></div>
-        <div class="caption lfb large-title tp-resizeme slidertext3" data-x="left" data-y="400" data-speed="600" data-start="2800"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br/>
+        <div class="caption lft large-title tp-resizeme slidertext2" data-x="left" data-y="270" data-speed="600" data-start="2200"><span> {{ slider.name }} </span></div>
+        <div class="caption lfb large-title tp-resizeme slidertext3" data-x="left" data-y="400" data-speed="600" data-start="2800"> {{ slider.description }} <br/>
           tempor incididunt ut labore et dolore magna aliqua.</div>
         <div class="caption lfb large-title tp-resizeme slidertext4" data-x="left" data-y="470" data-speed="600" data-start="3400"> <a href="#">Contact Us</a> </div>
       </li>
-      <li data-slotamount="7" data-transition="slotzoom-horizontal" data-masterspeed="1000" data-saveperformance="on"> <img alt="" src="{% static 'images/dummy.png' %}" data-lazyload="{% static 'images/slider2.jpg' %}">
-        <div class="caption lfb large-title tp-resizeme slidertext1" data-x="left" data-y="240" data-speed="600" data-start="1600"> Welcome To </div>
-        <div class="caption lft large-title tp-resizeme slidertext2" data-x="left" data-y="270" data-speed="600" data-start="2200"><span> Beauty Salon </span></div>
-        <div class="caption lfb large-title tp-resizeme slidertext3" data-x="left" data-y="400" data-speed="600" data-start="2800"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br/>
-          tempor incididunt ut labore et dolore magna aliqua.</div>
-        <div class="caption lfb large-title tp-resizeme slidertext4" data-x="left" data-y="470" data-speed="600" data-start="3400"> <a href="#">Contact Us</a> </div>
-      </li>
+    {% endfor %}
+
     </ul>
   </div>
 </div>
@@ -246,26 +243,29 @@
           <div class="title">
             <h1>Contact <span>Information</span></h1>
           </div>
+
+          {% for setting in settings %}
           <ul class="contact-list unorderList">
             <li>
               <div class="contact_box">
                 <div class="icon"> <img alt="" src="{% static 'images/adress.png' %}"> </div>
-                <p>Main Office <span>123 Lorem Ipsum, 32 sit Atlanta</span></p>
+                <p>Main Office <span>{{ setting.company_address }}</span></p>
               </div>
             </li>
             <li>
               <div class="contact_box">
                 <div class="icon"> <img alt="" src="{% static 'images/email.png' %}"> </div>
-                <p>E-mail<span> <a href="mailto:info@example.com">info@example.com</a></span></p>
+                <p>E-mail<span> <a href="mailto:info@example.com">{{ setting.email }}</a></span></p>
               </div>
             </li>
             <li>
               <div class="contact_box">
                 <div class="icon"> <img alt="" src="{% static 'images/phone.png' %}"> </div>
-                <p>Phone<span> <a href="tel:7701234567">(770) 123 4567</a></span></p>
+                <p>Phone<span> <a href="tel:7701234567">{{ setting.phome }}</a></span></p>
               </div>
             </li>
           </ul>
+          {% endfor %}
         </div>
       </div>
     </div>

@@ -115,17 +115,21 @@
       <div class="col-lg-3 col-md-4 offset-1">
         <div class="footer_info">
           <h3>Get in Touch</h3>
+
+          {% for setting in settings %}
           <ul class="footer-adress">
-            <li class="footer_address"> <i class="fas fa-map-signs"></i> <span>123 Lorem Ipsum, 32 sit Atlanta</span> </li>
-            <li class="footer_email"> <i class="fas fa-envelope" aria-hidden="true"></i> <span><a href="mailto:info@example.com"> info@example.com </a></span> </li>
-            <li class="footer_phone"> <i class="fas fa-phone-alt"></i> <span><a href="tel:7704282433"> 770-123-4567</a></span> </li>
+            <li class="footer_address"> <i class="fas fa-map-signs"></i> <span>{{ setting.company_address }}</span> </li>
+            <li class="footer_email"> <i class="fas fa-envelope" aria-hidden="true"></i> <span><a href="mailto:info@example.com">{{ setting.email }}</a></span> </li>
+            <li class="footer_phone"> <i class="fas fa-phone-alt"></i> <span><a href="tel:7704282433">{{ setting.phome }}</a></span> </li>
           </ul>
+          {% endfor %}
+
           <div class="social-icons footer_icon">
             <ul>
-              <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>
