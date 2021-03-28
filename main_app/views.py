@@ -22,6 +22,7 @@ class HomeView(TemplateView):
         context['gallerys'] = Gallery.objects.all().order_by('-id')[:8]
         context['services'] = Services.objects.all().order_by('id')[:3]
         context['testimoinials'] = Testimoinials.objects.all()
+        context['settings'] = Setting.objects.all()
         context['sliders'] = Slider.objects.all().order_by('id')[:3]
 
         return context 
