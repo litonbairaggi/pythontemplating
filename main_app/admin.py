@@ -17,8 +17,11 @@ class BlogAdmin(admin.ModelAdmin):
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'gallery_img']
+
+@admin.register(Teams)
+class TeamsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'designation', 'facebook', 'linkedin', 'twitter', 'instagram', 'team_img']
     
-admin.site.register(Teams)
 admin.site.register(Services)
 admin.site.register(Testimoinials)
 admin.site.register(Setting)
