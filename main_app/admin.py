@@ -10,7 +10,7 @@ from . models import Testimoinials
 from . models import Setting
 from . models import Slider
 
-@admin.register(Blog, Gallery)
+@admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'description', 'blog_img']
 
