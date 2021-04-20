@@ -21,8 +21,19 @@ class GalleryAdmin(admin.ModelAdmin):
 @admin.register(Teams)
 class TeamsAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'designation', 'facebook', 'linkedin', 'twitter', 'instagram', 'team_img']
-    
-admin.site.register(Services)
-admin.site.register(Testimoinials)
-admin.site.register(Setting)
-admin.site.register(Slider)
+
+@admin.register(Services)
+class TeamsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'description', 'services_img']
+
+@admin.register(Testimoinials)
+class TeamsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'description', 'testimoinial_img']
+
+@admin.register(Setting)
+class TeamsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'email', 'phome', 'facebook', 'linkedin', 'twitter', 'instagram', 'company_address', 'logo_img']
+
+@admin.register(Slider)
+class TeamsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'description', 'sliders_img']
